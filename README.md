@@ -1,2 +1,2 @@
-# TEC_tecnologico_AAA
+# TEC_proyecto
 Proyectos Python
