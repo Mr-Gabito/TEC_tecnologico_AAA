@@ -9,29 +9,54 @@ print("\n")
 print("It's quite simple actually")
 print("You give us the options and we'll randomly select one for you!")
 
+def askusern():
+  print("First, what should we call you? ")
+  name=input()
+  return name
+print("Welcome to the show ", askusern().title(),"!")
 
-
-#Possible answers attempt
 possans=[]
-askans=input("Give us the options: ")
-possans.append(askans)
-print(f'Alright we have the options: {possans}')
+while True: 
 
-#Have to figure out how to make a loop, to ask the same question
+  askans=int(input("""First of all, please do choose what you'd like to do:
+               1. Add an option to the roulette
+               2. Remove an option from the roulette
+               3. Show the options
+               4. Spin the wheel! 
+               5. Delete and start over
+               6. Exit 
+               """))
+  if askans == 1:
+    option=str(input("Give us an option :D "))
+    possans.append(option)
+  if askans == 2: 
+    for x,item in enumerate(possans,0):
+      print(x,'. '+item, sep='')
+    while True:
+      rem=int(input("Which option would you like to remove? "))
+      if rem <0 or rem> len(possans)-1:
+        print("Terribly sorry, that is not an option, try again")
+      else:
+        possans.pop(rem)
+        break
+  if askans == 3:
+    if len(possans)==0:
+      print("Sorry, the list is empty")
+    else:
+      for x in range(len(possans)):
+        print(x, '. ', possans[x] )
+  if askans == 4:
+    if len(possans)<2:
+      print("Please give us more options")
+    if len(possans)>2:
+      print("Alright, let's get started!")
+      print(random.choice(possans))
+  if askans == 5: 
+    possans.clear()
+    print("Loading...")
+    print("All done! You can now reset it")
+  if askans == 6:
+    print("Come back soon!")
+    break
 
-final=input("Are those all the options? Yes or no? ")
-if final==("no"):
-  print("Ok then...")
-elif final==("yes"):
-  print("Alright, let's get started!")
-  print(random.choice(possans))
-else:
-  print("Please answer with yes or no")
-
-#Also need to figure out how to continue the question if the answer is not yes or no
-
-if len(possans)<2:
-  print("Please give us more options")
-
-#Need to know where to put this part on the code
 
