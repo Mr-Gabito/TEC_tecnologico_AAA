@@ -1,4 +1,6 @@
 import random
+import time
+
 
 print("Hello! Welcome to the Lucky G Roulette")
 print("\n")
@@ -27,8 +29,10 @@ while True:
                6. Exit 
                """))
   if askans == 1:
-    option=str(input("Give us an option :D "))
-    possans.append(option)
+    numbopt=int(input("How many options do you wish to add? "))
+    for i in range(numbopt):
+      option=str(input("Please give us option " + str(i+1) + ": "))
+      possans.append(option)
   if askans == 2: 
     for x,item in enumerate(possans,0):
       print(x,'. '+item, sep='')
@@ -50,11 +54,17 @@ while True:
       print("Please give us more options")
     if len(possans)>2:
       print("Alright, let's get started!")
+      #Figure out time speed up to slow down for roulette
+      #for x in possans:
+        #print(random.choice(possans))
+        #time.sleep(0.1)
       print(random.choice(possans))
   if askans == 5: 
     possans.clear()
-    print("Loading...")
-    print("All done! You can now reset it")
+    kill_list=["Loading.","Loading..","Loading...","All done! You can now start again"]
+    for x in kill_list:
+      print(x)
+      time.sleep(1)
   if askans == 6:
     print("Come back soon!")
     break
