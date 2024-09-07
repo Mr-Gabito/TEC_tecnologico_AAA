@@ -54,11 +54,39 @@ while True:
       print("Please give us more options")
     if len(possans)>2:
       print("Alright, let's get started!")
-      #Figure out time speed up to slow down for roulette
-      #for x in possans:
-        #print(random.choice(possans))
-        #time.sleep(0.1)
-      print(random.choice(possans))
+      time.sleep(1)
+      #CAN BE IMPROVED WITH DEF FUNCTION
+      for l in [0.001, 0.001, 0.001,
+          0.002, 0.002, 0.002,
+          0.003, 0.003, 0.003,
+          0.004, 0.004, 0.004,
+          0.005, 0.005, 0.005,
+          0.006, 0.006, 0.006,
+          0.007, 0.007, 0.007,
+          0.008, 0.008, 0.008,
+          0.009, 0.009, 0.009,
+          0.01, 0.01, 0.01,
+          0.02, 0.02, 0.02,
+          0.03, 0.03, 0.03,
+          0.04, 0.04, 0.04,
+          0.05, 0.05, 0.05,
+          0.06, 0.06, 0.06,
+          0.07, 0.07, 0.07,
+          0.08, 0.08, 0.08,
+          0.09, 0.09, 0.09,
+          0.1, 0.1, 0.1,
+          0.2, 0.2, 0.2,
+          0.3, 0.3,
+          0.4, 0.4,
+          0.5, 0.5,
+          0.6, 0.6,
+          0.7,
+          0.8,
+          0.9,
+          1]:
+        print(random.choice(possans))
+        time.sleep(l)
+      print("Your answer is ", random.choice(possans))
   if askans == 5: 
     possans.clear()
     kill_list=["Loading.","Loading..","Loading...","All done! You can now start again"]
