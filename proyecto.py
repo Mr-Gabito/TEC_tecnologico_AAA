@@ -10,15 +10,15 @@ print("Fear not as we have you covered")
 print("\n")
 print("It's quite simple actually")
 print("You give us the options and we'll randomly select one for you!")
-
+lista=[]
 def askusern():
   print("First, what should we call you? ")
   name=input()
   return name
 print("Welcome to the show ", askusern().title(),"!")
-
+askans=0
 possans=[]
-while True: 
+while askans != 6: 
 
   askans=int(input("""First of all, please do choose what you'd like to do:
                1. Add an option to the roulette
@@ -33,9 +33,19 @@ while True:
     for i in range(numbopt):
       option=str(input("Please give us option " + str(i+1) + ": "))
       possans.append(option)
+
+
+      #FIND HOW TO MAKE THE QUESTION ONLY BE A NUMBER AND REPEAT IF NOT
+
+
   if askans == 2: 
     for x,item in enumerate(possans,0):
       print(x,'. '+item, sep='')
+
+
+    #CHANGE THE WHILE TRUE TO AN ACTUAL CONDITION
+
+
     while True:
       rem=int(input("Which option would you like to remove? "))
       if rem <0 or rem> len(possans)-1:
@@ -55,46 +65,35 @@ while True:
     if len(possans)>2:
       print("Alright, let's get started!")
       time.sleep(1)
-      #CAN BE IMPROVED WITH DEF FUNCTION
-      for l in [0.001, 0.001, 0.001,
-          0.002, 0.002, 0.002,
-          0.003, 0.003, 0.003,
-          0.004, 0.004, 0.004,
-          0.005, 0.005, 0.005,
-          0.006, 0.006, 0.006,
-          0.007, 0.007, 0.007,
-          0.008, 0.008, 0.008,
-          0.009, 0.009, 0.009,
-          0.01, 0.01, 0.01,
-          0.02, 0.02, 0.02,
-          0.03, 0.03, 0.03,
-          0.04, 0.04, 0.04,
-          0.05, 0.05, 0.05,
-          0.06, 0.06, 0.06,
-          0.07, 0.07, 0.07,
-          0.08, 0.08, 0.08,
-          0.09, 0.09, 0.09,
-          0.1, 0.1, 0.1,
-          0.2, 0.2, 0.2,
-          0.3, 0.3,
-          0.4, 0.4,
-          0.5, 0.5,
-          0.6, 0.6,
-          0.7,
-          0.8,
-          0.9,
-          1]:
+      def times3(a):
+        lista.append(a)
+        lista.append(a)
+        lista.append(a)
+      def times2(a):
+        lista.append(a)
+        lista.append(a)
+      def roulettelist(listl):
+        numbl=0.0
+        while numbl <= 1:
+          while numbl <= 0.01:
+            numbl = numbl + 0.001
+            times3(numbl)
+          while numbl <= 0.1:
+            numbl = numbl + 0.01
+            times2(numbl)
+          numbl = numbl + 0.1
+          listl.append(numbl)
+      roulettelist(lista)
+      for x in lista:
         print(random.choice(possans))
-        time.sleep(l)
-      print("Your answer is ", random.choice(possans))
+        time.sleep(x)
+      print("Your answer is", random.choice(possans))
   if askans == 5: 
     possans.clear()
     kill_list=["Loading.","Loading..","Loading...","All done! You can now start again"]
     for x in kill_list:
       print(x)
       time.sleep(1)
-  if askans == 6:
-    print("Come back soon!")
-    break
+print("Come back soon!")
 
-
+#FIND HOW TO CLEAR THE TERMINAL FOR EACH OPTION
