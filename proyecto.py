@@ -1,6 +1,11 @@
+from os import system, name
 import random
 import time
 
+
+def clear():
+  if name == 'nt':
+    _ = system('cls')
 
 print("Hello! Welcome to the Lucky G Roulette")
 print("\n")
@@ -16,11 +21,12 @@ def askusern():
   name=input()
   return name
 print("Welcome to the show ", askusern().title(),"!")
+time.sleep(2)
 askans=0
 possans=[]
 while askans != 6: 
-
-  askans=int(input("""First of all, please do choose what you'd like to do:
+  clear()
+  askans=int(input("""Please do choose what you'd like to do:
                1. Add an option to the roulette
                2. Remove an option from the roulette
                3. Show the options
@@ -29,47 +35,52 @@ while askans != 6:
                6. Exit 
                """))
   if askans == 1:
+    clear()
     numbopt=int(input("How many options do you wish to add? "))
     for i in range(numbopt):
       option=str(input("Please give us option " + str(i+1) + ": "))
       possans.append(option)
-
-
-      #FIND HOW TO MAKE THE QUESTION ONLY BE A NUMBER AND REPEAT IF NOT
-
-
   if askans == 2: 
-    for x,item in enumerate(possans,0):
-      print(x,'. '+item, sep='')
-
-
-    #CHANGE THE WHILE TRUE TO AN ACTUAL CONDITION
-
-
-    while True:
-      rem=int(input("Which option would you like to remove? "))
-      if rem <0 or rem> len(possans)-1:
-        print("Terribly sorry, that is not an option, try again")
-      else:
-        possans.pop(rem)
-        break
+    clear()
+    if len(possans)==0:
+      print("Sorry, the list is empty")
+      time.sleep(2)
+    else:
+      for x,item in enumerate(possans,0):
+        print(x,'. '+item, sep='')
+        time.sleep(0.1)
+      while True:
+        rem=int(input("Which option would you like to remove? "))
+        if rem <0 or rem> len(possans)-1:
+          print("Terribly sorry, that is not an option, try again")
+        else:
+          possans.pop(rem)
+          break
   if askans == 3:
     if len(possans)==0:
       print("Sorry, the list is empty")
+      time.sleep(1)
     else:
+      clear()
       for x in range(len(possans)):
         print(x, '. ', possans[x] )
+        time.sleep(0.1)
+      cont=str(input("Press enter to continue: "))
   if askans == 4:
+    clear()
     if len(possans)<2:
       print("Please give us more options")
-    if len(possans)>2:
+      time.sleep(2)
+    elif len(possans)>=2:
       print("Alright, let's get started!")
       time.sleep(1)
       def times3(a):
         lista.append(a)
         lista.append(a)
         lista.append(a)
+        lista.append(a)
       def times2(a):
+        lista.append(a)
         lista.append(a)
         lista.append(a)
       def roulettelist(listl):
@@ -88,7 +99,9 @@ while askans != 6:
         print(random.choice(possans))
         time.sleep(x)
       print("Your answer is", random.choice(possans))
+      time.sleep(3)
   if askans == 5: 
+    clear()
     possans.clear()
     kill_list=["Loading.","Loading..","Loading...","All done! You can now start again"]
     for x in kill_list:
@@ -96,4 +109,3 @@ while askans != 6:
       time.sleep(1)
 print("Come back soon!")
 
-#FIND HOW TO CLEAR THE TERMINAL FOR EACH OPTION
