@@ -15,7 +15,7 @@ print("Fear not as we have you covered")
 print("\n")
 print("It's quite simple actually")
 print("You give us the options and we'll randomly select one for you!")
-lista=[]
+matrizi=[[],[],[]]
 def askusern():
   print("First, what should we call you? ")
   name=input()
@@ -75,27 +75,33 @@ while askans != 6:
       print("Alright, let's get started!")
       time.sleep(1)
       def times3(a):
-        lista.append(a)
-        lista.append(a)
-        lista.append(a)
-        lista.append(a)
+          matrizi[0].append(a)
+          matrizi[0].append(a)
+          matrizi[0].append(a)
+          matrizi[0].append(a)
       def times2(a):
-        lista.append(a)
-        lista.append(a)
-        lista.append(a)
-      def roulettelist(listl):
-        numbl=0.0
-        while numbl <= 1:
-          while numbl <= 0.01:
-            numbl = numbl + 0.001
-            times3(numbl)
-          while numbl <= 0.1:
-            numbl = numbl + 0.01
-            times2(numbl)
-          numbl = numbl + 0.1
-          listl.append(numbl)
-      roulettelist(lista)
-      for x in lista:
+          matrizi[1].append(a)
+          matrizi[1].append(a)
+          matrizi[1].append(a)
+      def roulettelist():
+          numbl=0.0
+          while numbl <= 1:
+              while numbl <= 0.01:
+                  numbl = numbl + 0.001
+                  times3(numbl)
+              while numbl <= 0.1:
+                  numbl = numbl + 0.01
+                  times2(numbl)
+              numbl = numbl + 0.1
+              matrizi[2].append(numbl)
+      roulettelist()
+      for x in matrizi[0]:
+        print(random.choice(possans))
+        time.sleep(x)
+      for x in matrizi[1]:
+        print(random.choice(possans))
+        time.sleep(x)
+      for x in matrizi[2]:
         print(random.choice(possans))
         time.sleep(x)
       print("Your answer is", random.choice(possans))
