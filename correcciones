@@ -1,0 +1,25 @@
+Sub-Competencia: 
+  -Intepretación: Apliación de técnicas de programación-
+
+Error original: 
+  -En el avance dos, no puse ni una linea de codigo que mostraba operadores aritmeticos-
+
+Cambio realizado: 
+  -Agregue partes en donde se utilizan operadores aritmeticos, la mas relevante siendo la funcion de roulettelist-
+    
+  def roulettelist():
+    numbl=0.0
+    while numbl <= 1:
+      while numbl <= 0.01:
+        numbl = numbl + 0.001
+        times4(numbl)
+      while numbl <= 0.1:
+        numbl = numbl + 0.01
+        times3(numbl)
+      numbl = numbl + 0.1
+      matrizi[2].append(numbl)
+
+Líneas de código donde se ve la corrección: 
+  -De la linea 109 a 121-
+
+
