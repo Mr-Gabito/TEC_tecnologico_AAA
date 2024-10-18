@@ -12,6 +12,9 @@ Explicacion del codigo:
 El codigo esta dividido en diferentes funciones que se mandan a llamar dependiendo del menu que se imprime, con 6 opciones. Se le pide al usuario el nombre, y luego continua al menu de opciones. Con la opcion 1, le pide al usuario que proporcione la cantidad de opciones que quiere tener en su lista de la ruleta, y luego le pide que ponga esas opciones. En la opcion 2, le da la opcion al usuario de borrar una de las opciones que puso al inicio, y si no hay opciones le avisa que hacen falta. En la opcion 3, le deja al usuario ver la lista de opciones que lleva la ruleta, igual si no hay nada le dice al usuario. En la opcion 4, empieza la ruleta, imprimiendo multiples veces opciones aleatorias de la lista para mostrarle su opcion final. En la opcion 5, le deja al usuario borrar su lista actual para poder volver a iniciar con otras opciones para que pueda volver a usar la ruleta Y finalmente la opcion 6 es la que termina con el codigo, imprimiendo un mensaje de despedida hacia el usuario.
 
 Los comandos que le agregue al codigo que fueron encontradas fuera son:
+
 time - Consegui la informacion del comando time en StackOverflow
+
 random - Este comando lo utilizamos solo en un quiz durante clase
+
 os - Consegui la informacion del comando os en StackOverflow
